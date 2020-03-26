@@ -1,0 +1,33 @@
+1) Must input elements be inside forms?
+Når man laver en form, skal hverken formen eller input elementerne indlejes i hinanden. 
+Man laver et element for en form og fortæller bl.a., hvilken metode den skal have, hvorefter man 
+indsætter input felterne efter. De skal ikke være inde i formen på, 
+den måde at den skal sætte ind inden slut tagget på formen
+
+2) Find and name the EMPTY elements.
+<!ELEMENT base EMPTY> <!-- document base URI -->
+<!ELEMENT meta EMPTY> <!-- generic metainformation -->
+<!ELEMENT link EMPTY> <!-- link -->
+<!ELEMENT hr EMPTY> <!-- Horizontal Rule -->
+<!ELEMENT br EMPTY>   <!-- forced line break -->
+<!ELEMENT param EMPTY> <!-- param is used to supply a named property value -->
+<!ELEMENT img EMPTY> <!-- img -->
+<!ELEMENT area EMPTY> <!-- map -->
+<!ELEMENT input EMPTY>     <!-- form control -->
+<!ELEMENT col EMPTY> <!-- tabel element -->
+
+3) May a table be empty? May a tr?
+Et tabel element må ikke være tomt
+
+4) What are the possible attributes of a h2?
+h2 kan have en attributes: ul, ol, dl, pre
+ 
+<!ENTITY % heading "h1|h2|h3|h4|h5|h6">
+<!ENTITY % lists "ul | ol | dl">
+<!ENTITY % blocktext "pre | hr | blockquote | address">
+
+<!ENTITY % block
+     "p | %heading; | div | %lists; | %blocktext; | fieldset | table">
+
+<!ENTITY % Block "(%block; | form | %misc;)*">
+
